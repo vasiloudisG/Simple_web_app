@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +34,12 @@ public class RegServlet extends HttpServlet {
             preparedStatement.setString(2, surname);
             preparedStatement.setString(3, gender);
             preparedStatement.setString(4, birthdate);
-            preparedStatement.executeUpdate();
+            result = preparedStatement.executeUpdate();
+            //System.out.println(result);
+            if (result > 0) {
+                request.setAttribute("message", "Registration successful!");
+                request.getRequestDispatcher("/success.jsp").forward(request, response);
+            }
 
             int userId = 0;
             ResultSet rs = preparedStatement.getGeneratedKeys();
