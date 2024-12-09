@@ -1,6 +1,7 @@
 package objects;
 
 public class User {
+    private String id;
     private String name;
     private String surname;
     private String gender;
@@ -8,7 +9,8 @@ public class User {
     private String work_address;
     private String home_address;
 
-    public User(String name, String surname, String gender, String birthdate, String work_address, String home_address) {
+    public User(String id, String name, String surname, String gender, String birthdate, String work_address, String home_address) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -19,6 +21,14 @@ public class User {
 
     public User() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

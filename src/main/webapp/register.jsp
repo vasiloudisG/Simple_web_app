@@ -31,6 +31,7 @@
 
         <button type="submit">Submit</button>
         <button onclick="location.href='index.jsp';">Home</button>
+
     </form>
     <script>
         flatpickr("#birthdate", { dateFormat: "Y-m-d" });
