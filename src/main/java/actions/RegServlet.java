@@ -17,6 +17,16 @@ import java.sql.Statement;
 public class RegServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        try {
+            DB.checkAndCreateTables();
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("message", "Database initialization failed.");
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            return;
+        }
+
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String gender = request.getParameter("gender");
