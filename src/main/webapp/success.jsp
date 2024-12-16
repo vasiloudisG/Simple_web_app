@@ -11,6 +11,12 @@
             <div class="col-md-6">
                 <div class="alert alert-success text-center" role="alert">
                     <h3 class="alert-heading">Registration Successful!</h3>
+                    <h3>
+                            <%
+                                String message = (String) request.getAttribute("message");
+                                System.out.print(message);
+                            %>
+                    </h3>
                 </div>
                 <div class="text-center mt-4">
                     <button class="btn btn-primary" onclick="location.href='index.jsp';">Home</button>
