@@ -10,12 +10,8 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="alert alert-success text-center" role="alert">
-                    <h3 class="alert-heading">Registration Successful!</h3>
-                    <h3>
-                            <%
-                                String message = (String) request.getAttribute("message");
-                                System.out.print(message);
-                            %>
+                    <h3 class="alert-heading">
+                        <%= request.getAttribute("message") %>
                     </h3>
                 </div>
                 <div class="text-center mt-4">
